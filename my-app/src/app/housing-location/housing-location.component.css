@@ -4,6 +4,9 @@
   padding-bottom: 30px;
   background-color: #dedeea;
 }
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .listing-heading {
   color: #6962cd;
   padding: 10px 20px 0 20px;
