@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common'; // Import
+import { RouterModule } from '@angular/router';
+CommonModule;
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HomeComponent],
+  imports: [CommonModule, HomeComponent, RouterModule],
   // templateUrl: './app.component.html',
-  template: ` <main>
-    <header class="brand-name">
-      <img
-        class="brand-logo"
-        src="../assets/logo.png"
-        alt="logo"
-        aria-hidden="true"
-      />
-    </header>
-    <section class="content">
-      <app-home></app-home>
-    </section>
-  </main>`,
+  template: `
+    <main>
+      <a [routerLink]="['/']">
+        <header class="brand-name">
+          <img
+            class="brand-logo"
+            src="/assets/logo.png"
+            alt="logo"
+            aria-hidden="true"
+          />
+        </header>
+      </a>
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  `,
   styleUrl: './app.component.css',
 })
 export class AppComponent {
